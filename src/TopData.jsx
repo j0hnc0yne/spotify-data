@@ -32,10 +32,13 @@ export default function TopData(type, topData) {
 
     return (
         <>
-            <div className="text-teal-400 pt-5 underline" id="playlistId">
-                <a href="#" onClick={makePlayList}>Create playlist with below tracks</a>
-                <br/>
-            </div>
+            {type === 'tracks' ?
+                <div className="text-teal-400 pt-5 underline" id="playlistId">
+                    <a href="#" onClick={makePlayList}>Create playlist with below tracks</a>
+                    <br/><br/>
+                </div>
+                : <br/>
+            }
             <div className="text-left w-full pt-5">
                 <ol className="text-left w-full space-y-1 text-gray-500 list-decimal list-inside dark:text-gray-400">
                     {items.map(item => (
