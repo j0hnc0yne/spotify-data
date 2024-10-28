@@ -10,7 +10,7 @@ export function redirectToAuthCodeFlow() {
         params.append("client_id", clientId);
         params.append("response_type", "code");
         params.append("redirect_uri", redirectUri);
-        params.append("scope", "user-top-read");
+        params.append("scope", "user-read-private user-top-read playlist-modify-public");
         params.append("code_challenge_method", "S256");
         params.append("code_challenge", challenge);
         document.location = `https://accounts.spotify.com/authorize?${params.toString()}`;
