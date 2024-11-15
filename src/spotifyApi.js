@@ -13,7 +13,7 @@ export async function getUserInfo(token) {
     } else {
         console.log(`HTTP Response Code: ${response?.status}`)
         sessionStorage.setItem("spotAccess", "expired");
-        document.location = redirectUri + "?code=expired";
+        document.location = "https://j0hnc0yne.github.io/spotify-data/?code=expired";
     }
 }
 
