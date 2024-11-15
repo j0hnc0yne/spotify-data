@@ -26,6 +26,7 @@ export async function getTopTracks(token, type, timeRange, limit) {
     if (response?.ok) {
         return await response.json();
     } else {
+        alert(`Failed calling ${url} - HTTP Response: ${response?.status}`)
         console.log(`HTTP Response Code: ${response?.status}`)
         sessionStorage.setItem("spotAccess", "expired");
         document.location = redirectUri + "?code=expired";
