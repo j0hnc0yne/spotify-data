@@ -6,8 +6,13 @@ const AT = "spotAccess";
 
 function App() {
     const params = new URLSearchParams(window.location.search);
-    let token = sessionStorage.getItem(AT);
+    let token = null;
     let code = params.get("code");
+    if (code) {
+        sessionStorage.removeItem(AT);
+    } else {
+        token = sessionStorage.getItem(AT);
+    }
     if (token === "expired") {
         //TODO add expired message
         sessionStorage.removeItem("spotAccess");
