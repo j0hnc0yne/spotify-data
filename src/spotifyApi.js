@@ -13,7 +13,7 @@ export async function getUserInfo(token) {
     } else {
         console.log(`HTTP Response Code: ${response?.status}`)
         sessionStorage.setItem("spotAccess", "expired");
-        document.location = "https://j0hnc0yne.github.io/spotify-data/?code=expired";
+        document.location = redirectUri + "?code=expired";
     }
 }
 
@@ -28,7 +28,7 @@ export async function getTopTracks(token, type, timeRange, limit) {
     } else {
         console.log(`HTTP Response Code: ${response?.status}`)
         sessionStorage.setItem("spotAccess", "expired");
-        document.location = redirectUri + "code=expired";
+        document.location = redirectUri + "?code=expired";
     }
 }
 
@@ -44,7 +44,7 @@ export async function createPlaylist(token, userId, name, description) {
     } else {
         console.log(`HTTP Response Code: ${response?.status}`)
         sessionStorage.setItem("spotAccess", "expired");
-        document.location = redirectUri + "code=expired";
+        document.location = redirectUri + "?code=expired";
     }
 }
 
@@ -60,6 +60,6 @@ export async function addToPlaylist(token, playlistId, uris) {
     } else {
         console.log(`HTTP Response Code: ${response?.status}`)
         sessionStorage.setItem("spotAccess", "expired");
-        document.location = redirectUri + "code=expired";
+        document.location = redirectUri + "?code=expired";
     }
 }

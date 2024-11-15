@@ -6,16 +6,11 @@ const AT = "spotAccess";
 
 function App() {
     const params = new URLSearchParams(window.location.search);
-    let token = null;
+    let token = sessionStorage.getItem(AT);
     let code = params.get("code");
-    if (code) {
-        sessionStorage.removeItem(AT);
-    } else {
-        token = sessionStorage.getItem(AT);
-    }
-    if (token === "expired") {
-        //TODO add expired message
+    if (token === "expired" || token === "undefined") {
         sessionStorage.removeItem("spotAccess");
+        alert("Token is expired");
         token = null;
         code = null;
     }
@@ -39,7 +34,6 @@ function App() {
                             Spotify Top Music
                         </h1>
                     </div>
-                    <br/>
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                         View your top Songs or Artists.
                     </h3>
