@@ -70,7 +70,7 @@ function TopInfo() {
 
             </form>
             <div>
-                {topTracks ? TopData(selectRef.current.value, topTracks) : null}
+                {topTracks ? <TopData type={selectRef.current.value} topData={topTracks} /> : null}
             </div>
         </>
     )
