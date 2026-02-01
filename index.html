@@ -9,19 +9,8 @@
   </head>
   <body>
     <script>
-      (function() {
-        try {
-          var theme = localStorage.getItem('theme');
-          var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-          if (theme === 'dark' || (theme === null && prefersDark)) {
-            document.documentElement.classList.add('dark');
-          } else {
-            document.documentElement.classList.remove('dark');
-          }
-        } catch (e) {
-          // ignore
-        }
-      })();
+      // Force dark mode unconditionally
+      try { document.documentElement.classList.add('dark'); } catch (e) {}
     </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>

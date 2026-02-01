@@ -1,5 +1,4 @@
 import TopInfo from "./TopInfo.jsx";
-import ThemeToggle from "./ThemeToggle.jsx";
 import {getAccessToken, redirectUri} from "./oidc.js";
 import AuthInfo from "./AuthInfo.jsx";
 
@@ -30,11 +29,10 @@ function App() {
         <>
             <div className="bg-gray-50 dark:bg-gray-800 min-h-screen">
                 <div className="flex min-h-[80vh] flex-col py-12 sm:px-6 lg:px-8">
-                    <div className="sm:mx-auto sm:w-full sm:max-w-md flex items-center justify-between">
+                    <div className="sm:mx-auto sm:w-full sm:max-w-md">
                         <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white">
                             Spotify Top Music
                         </h1>
-                        <ThemeToggle />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                         View your top Songs or Artists.
