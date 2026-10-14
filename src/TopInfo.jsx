@@ -63,7 +63,7 @@ function TopInfo() {
                     </button>
                 </div>
 
-                <div id="spinner" className="hidden flex gap-4 p-4 flex-wrap justify-left">
+                <div id="spinner" className="hidden flex gap-4 p-4 flex-wrap justify-start">
                     <img className="w-20 h-20 animate-spin" src="https://www.svgrepo.com/show/199956/loading-loader.svg"
                          alt="Loading icon"/>
                 </div>

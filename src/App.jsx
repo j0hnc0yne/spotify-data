@@ -22,6 +22,10 @@ function App() {
             sessionStorage.setItem(AT, accessToken);
             token = accessToken;
             document.location = redirectUri;
+        }).catch(err => {
+            console.error("Failed to get access token:", err);
+            sessionStorage.removeItem(AT);
+            document.location = redirectUri;
         });
     }
 

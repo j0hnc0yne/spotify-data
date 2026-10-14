@@ -51,6 +51,10 @@ export async function getAccessToken(code) {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: params
     });
+    if (!result.ok) {
+        const error = await result.json().catch(() => ({}));
+        throw new Error(error.error_description ?? `Token request failed: ${result.status}`);
+    }
     const { access_token } = await result.json();
     return access_token;
 }

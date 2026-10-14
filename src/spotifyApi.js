@@ -38,7 +38,7 @@ export async function createPlaylist(token, userId, name, description) {
     const url = `${BASE_URL}/users/${userId}/playlists`;
     const requestBody = {name: name, description: description};
     const response = await fetch(url, {
-        method: "POST", headers: { Authorization: `Bearer ${token}` }, body: JSON.stringify(requestBody)
+        method: "POST", headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" }, body: JSON.stringify(requestBody)
     });
     if (response?.ok) {
         return await response.json();
@@ -54,7 +54,7 @@ export async function addToPlaylist(token, playlistId, uris) {
     const url = `${BASE_URL}/playlists/${playlistId}/tracks`;
     const requestBody = {uris: uris};
     const response = await fetch(url, {
-        method: "POST", headers: { Authorization: `Bearer ${token}` }, body: JSON.stringify(requestBody)
+        method: "POST", headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" }, body: JSON.stringify(requestBody)
     });
     if (response?.ok) {
         return await response.json();
